@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap') ;
+
+* {
+  border: 0;
+  font-family: Play , sans-serif;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+button, input:focus, select:focus {
+  outline: 0 auto -webkit-focus-ring-color;
+  outline-offset: 0;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -13,6 +29,50 @@
 
 .green-border {
   border: 1px solid green;
+}
+
+.form-content {
+  background-color: #0000002a;
+  border: 2px solid #ffffff28;
+  border-radius: 30px;
+  box-shadow: 0 0 15px black;
+  display: flex;
+  flex-direction: column;
+  height: 30vmin;
+  justify-content: space-around;
+  padding: 50px 70px;
+  width: 40vw;
+}
+
+.form-content button {
+  background-color: #393c44;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 20px;
+  min-height: 40px;
+  width: 100%;
+}
+
+.form-content button:disabled {
+  background-color: #0000002a;
+  color: #282c34;
+  cursor: default;
+}
+
+.form-content label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-content label > input {
+  font-size: 1.1rem;
+  height: 30px;
+  margin-top: 5px;
+  padding: 0 10px;
 }
 
 @media ( prefers-reduced-motion : no-preference ) {
@@ -29,7 +89,7 @@
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
-  justify-content: center;
+  justify-content: space-around;
   min-height: 100vh;
 }
 
