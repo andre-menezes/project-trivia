@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchQuestions } from '../actions';
 import Header from '../components/Header';
+import Questions from '../components/Questions';
 
 class Game extends Component {
   constructor(props) {
@@ -21,19 +22,25 @@ class Game extends Component {
   }
 
   render() {
-    return (
+    const { isFetching } = this.props;
+    return isFetching ? (<p>Loading...</p>) : (
       <div>
         <Header />
-        Game Page
+        <Questions />
       </div>
     );
   }
 }
 
+const mapStateToProps = (state) => ({ isFetching: state.game.isFetching });
+
 const mapDispatchToProps = (dispatch) => ({
   fetchQuestionsApi: () => dispatch(fetchQuestions()),
 });
 
-Game.propTypes = { fetchQuestionsApi: PropTypes.func.isRequired };
+Game.propTypes = {
+  fetchQuestionsApi: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+};
 
-export default connect(null, mapDispatchToProps)(Game);
+export default connect(mapStateToProps, mapDispatchToProps)(Game);

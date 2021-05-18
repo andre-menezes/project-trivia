@@ -48,7 +48,7 @@ class Login extends Component {
     const { history } = this.props;
     const { disabled } = this.state;
     return (
-      <main className="App-header">
+      <main className="login-content">
         <img src={ logo } className="App-logo" alt="logo" />
         <form className="form-content">
           <label htmlFor="name">
@@ -70,6 +70,7 @@ class Login extends Component {
             />
           </label>
           <button
+            className="form-content-button"
             disabled={ disabled }
             onClick={ this.handleClick }
             type="button"
@@ -79,6 +80,7 @@ class Login extends Component {
           </button>
         </form>
         <button
+          className="form-content-button btn-settings"
           onClick={ () => history.push('/settings') }
           type="submit"
           data-testid="btn-settings"

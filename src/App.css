@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap') ;
 
 * {
-  border: 0;
+  box-sizing: border-box;
   font-family: Play , sans-serif;
   list-style: none;
   margin: 0;
   padding: 0;
   text-decoration: none;
+}
+
+html {
+  font-size: 16px;
 }
 
 button, input:focus, select:focus {
@@ -31,70 +35,11 @@ button, input:focus, select:focus {
   border: 1px solid green;
 }
 
-.form-content {
-  background-color: #0000002a;
-  border: 2px solid #ffffff28;
-  border-radius: 30px;
-  box-shadow: 0 0 15px black;
-  display: flex;
-  flex-direction: column;
-  height: 30vmin;
-  justify-content: space-around;
-  padding: 50px 70px;
-  width: 40vw;
-}
-
-.form-content button {
-  background-color: #393c44;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-top: 20px;
-  min-height: 40px;
-  width: 100%;
-}
-
-.form-content button:disabled {
-  background-color: #0000002a;
-  color: #282c34;
-  cursor: default;
-}
-
-.form-content label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.form-content label > input {
-  font-size: 1.1rem;
-  height: 30px;
-  margin-top: 5px;
-  padding: 0 10px;
-}
-
 @media ( prefers-reduced-motion : no-preference ) {
 
   .App-logo {
-    animation: shake infinite 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    animation: shake infinite 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   }
-}
-
-.App-header {
-  align-items: center;
-  background-color: #282c34;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  justify-content: space-around;
-  min-height: 100vh;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes shake {
@@ -115,3 +60,23 @@ button, input:focus, select:focus {
     transform: translate3d(4px, 0, 0);
   }
 }
+
+/* .login-content {
+  align-items: center;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+}
+
+.form-content {
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  height: 30vmin;
+  justify-content: space-around;
+  max-width: 80vmax;
+  padding: 2.5vmax;
+} */
