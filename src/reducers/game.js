@@ -1,6 +1,10 @@
-import { RECEIVE_QUESTIONS } from '../actions';
+import { RECEIVE_QUESTIONS, STOP_TIMER } from '../actions';
 
-const INITIAL_STATE = { questions: [], isFetching: true };
+const INITIAL_STATE = {
+  questions: [],
+  isFetching: true,
+  isResponding: false,
+};
 
 export default function game(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -8,7 +12,9 @@ export default function game(state = INITIAL_STATE, action) {
     ...state,
     questions: action.questions,
     isFetching: false,
+    isResponding: true,
   };
+  case STOP_TIMER: return { ...state, isResponding: action.isResponding };
   default: return state;
   }
 }

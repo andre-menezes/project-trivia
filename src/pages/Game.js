@@ -32,7 +32,9 @@ class Game extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ isFetching: state.game.isFetching });
+const mapStateToProps = (state) => ({
+  isFetching: state.game.isFetching,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   fetchQuestionsApi: () => dispatch(fetchQuestions()),
